@@ -5,8 +5,8 @@ import Theme from './Theme.astro'
 <nav>
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/philosophies">Philosophies</a></li>
-        <li><a href="/beyond-tech">Beyond technology</a></li>
+        <li><a href="/philosophies/">Philosophies</a></li>
+        <li><a href="/beyond-tech/">Beyond technology</a></li>
     </ul>
     <Theme />
 </nav>
@@ -65,6 +65,7 @@ import Theme from './Theme.astro'
     function applyTheme() {
         const links = Array.from(document.querySelectorAll('a'));
         const currentLocation = location.pathname;
+        console.log(currentLocation);
         let currentLink: HTMLAnchorElement | undefined;
         links.forEach(link => {
             if (link.getAttribute('href') === currentLocation) {
@@ -83,6 +84,12 @@ import Theme from './Theme.astro'
     // Apply the theme on load
     applyTheme();
 
+        // Listen for the click event on the button
+        const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', applyTheme);
+    }
+
     // Apply the theme after swapping
     document.addEventListener("astro:after-swap", () => {
         applyTheme();
@@ -91,10 +98,4 @@ import Theme from './Theme.astro'
             themeToggle.addEventListener('click', applyTheme);
         }
     });
-
-    // Listen for the click event on the button
-    const themeToggle = document.getElementById('theme-toggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', applyTheme);
-    }
 </script>

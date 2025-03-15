@@ -7,8 +7,8 @@ type Props = {
 };
 const {title} = Astro.props;
 
-import icon from '../assets/icons/profilePic-icon.png?url';
-import { ViewTransitions } from 'astro:transitions';
+import icon from '/public/profilePic-icon.png?url';
+import { ClientRouter } from 'astro:transitions';
 ---
 
 
@@ -16,9 +16,9 @@ import { ViewTransitions } from 'astro:transitions';
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href={icon} >
+        <link rel="icon" href={icon} />
         <title>{title}</title>
-        <ViewTransitions />
+        <ClientRouter />
     </head>
 
     <script>

@@ -5,7 +5,8 @@ import data from '../data/main-list-data';
 <ol>
     {
         data?.map((list) =>(
-            <li><a href={list.to} transition:name={`${list.title}`}>{list.title}</a></li>
+            // <li><a href={list.to} transition:name={`${list.title}`}>{list.title}</a></li>
+            <li><a href={list.to} transition:name={`${list.to}`}>{list.title}</a></li>
             <hr>
         ))
     }

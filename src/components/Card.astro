@@ -3,7 +3,7 @@ import type Card from '../model/card-model'
 const {to, title, gradient1, gradient2} = Astro.props as Card;
 ---
 <a href={to} class="card" style={`--gradient1: ${gradient1}; --gradient2: ${gradient2};`}>
-    <p set:html={title}></p>
+    <p set:html={title} transition:name={to}></p>
     <p>&rarr;</p>
 </a>
 

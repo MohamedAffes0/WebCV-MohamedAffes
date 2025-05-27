@@ -4,8 +4,8 @@
 
 # Screenshot
 <p align="center">
-    <img media="(prefers-color-scheme: dark)" src="https://github.com/MohamedAffes0/WebCV-MohamedAffes/blob/Mohamed/screenshot/preview-dark.png" width="200" >
-    <img media="(prefers-color-scheme: light)" src="https://github.com/MohamedAffes0/WebCV-MohamedAffes/blob/Mohamed/screenshot/preview-light.png" width="200" >
+    <img media="(prefers-color-scheme: dark)" src="https://github.com/MohamedAffes0/WebCV-MohamedAffes/blob/Mohamed/docs/images/preview-dark.png" width="200" >
+    <img media="(prefers-color-scheme: light)" src="https://github.com/MohamedAffes0/WebCV-MohamedAffes/blob/Mohamed/docs/images/preview-light.png" width="200" >
 </p>
 
 ---

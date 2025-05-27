@@ -4,7 +4,8 @@ type Props = {
     list: List[];
 };
 const {list} = Astro.props;
-const ch = `hi<strong>hi</strong>`;
+
+import  "../styles/list-animation.css"
 ---
 <ul>
     {
@@ -19,4 +20,5 @@ const ch = `hi<strong>hi</strong>`;
         font-size: 1em;
         margin-bottom: 20px;
     }
+
 </style>

@@ -1,48 +1,136 @@
-# Astro Starter Kit: Basics
+# 🌐 WebCV – Mohamed Affes
 
-```sh
-npm create astro@latest -- --template basics
-```
+> **CV en ligne** réalisé avec **[Astro](https://astro.build/)**, prêt pour un déploiement statique rapide (Netlify, Vercel, GitHub Pages, etc.).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+![Image mode clair](preview-light.png)
+*Image pour le mode clair*
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Image mode sombre](preview-dark.png)
+*Image pour le mode sombre*
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+---
 
-## 🚀 Project Structure
+## Sommaire
+1. [Fonctionnalités](#fonctionnalités)
+2. [Architecture du projet](#architecture-du-projet)
+3. [Prérequis](#prérequis)
+4. [Installation locale](#installation-locale)
+5. [Commandes fondamentales](#commandes-fondamentales)
+6. [Déploiement](#déploiement)
+7. [Personnalisation](#personnalisation)
+8. [Contribuer](#contribuer)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
+
+## Fonctionnalités
+
+- ⚡ **Statique & ultra‐rapide** : rendu pré‑compilé par Astro.  
+- 📱 **Responsive** : design mobile‑first et adaptatif.  
+- 🌑 **Dark mode** (activé par défaut) inspiré d’Appwrite.  
+- 🚀 **Déploiement 1‑clic** sur Netlify.  
+- ✍️ **Facile à éditer** : un simple fichier `.astro` pour vos infos.  
+
+---
+
+## Architecture du projet
 
 ```text
-/
-├── public/
-│   └── favicon.svg
+.
+├── public/               # Fichiers statiques (images, icônes…)
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/       # Composants Astro/JSX réutilisables
+│   ├── layouts/          # Gabarits de pages (Layout.astro)
+│   └── pages/            # Pages du site (index.astro, 404.astro…)
+├── .netlify/             # Config Netlify (op­tion­nel)
+├── astro.config.mjs      # Config globale Astro
+├── package.json          # Dépendances & scripts npm
+├── tsconfig.json         # Config TypeScript (facultatif)
+└── README.md             # Ce fichier
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+> **Astuce :** pour voir la structure complète, exécute `tree -I "node_modules|dist"` ou `npm run list:files` si tu as le script.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Prérequis
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Outil | Version minimale | Installation |
+|-------|------------------|--------------|
+| Node.js | **18.0.0** | <https://nodejs.org/> |
+| npm     | **9.0.0** (ou supérieur) | livré avec Node.js |
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Installation locale
+
+1. **Cloner le dépôt :**
+   ```bash
+   git clone https://github.com/MohamedAffes0/WebCV-MohamedAffes.git
+   cd WebCV-MohamedAffes
+   ```
+
+2. **Installer les dépendances (dont Astro) :**
+   ```bash
+   npm install
+   ```
+
+   > Astro est référencé dans `package.json`; aucune commande supplémentaire n’est nécessaire.
+
+3. **Lancer le serveur de développement :**
+   ```bash
+   npm run dev
+   ```
+   Accède ensuite à **<http://localhost:3000>**.
+
+---
+
+## Commandes fondamentales
+
+| Action | Commande |
+|--------|----------|
+| Installer Astro dans un _nouveau_ projet | `npm create astro@latest` |
+| Lancer le serveur de dev (hot reload) | `npm run dev` |
+| Construire la version production | `npm run build` |
+| Aperçu de la build locale | `npm run preview` |
+| Nettoyer le cache | `npm run astro -- cleanup` |
+
+---
+
+## Déploiement
+
+### Netlify
+
+1. Crée un compte sur <https://app.netlify.com/> puis **« New Site from Git »**.  
+2. Renseigne :
+   - **Build command :** `npm run build`
+   - **Publish directory :** `dist`
+3. Clique **Deploy Site** – Netlify gère tout !  
+   Les déploiements suivants se feront automatiquement à chaque `git push`.
+
+### Autres plateformes
+
+Le dossier **`dist/`** est 100 % statique ; tu peux l’héberger sur Vercel, GitHub Pages, Cloudflare Pages, etc.
+
+---
+
+## Personnalisation
+
+| Élément | Fichier à modifier |
+|---------|--------------------|
+| Contenu du CV | `src/pages/index.astro` |
+| Mise en page globale | `src/layouts/Main.astro`, `src/layouts/Blog.astro` |
+| Style / thèmes | `src/styles/` ou Tailwind CSS (si installé) |
+| Images | `public/` |
+
+---
+
+## Contribuer
+
+Les _pull requests_ sont les bienvenues !  
+1. Fork → feature branch → commit → PR.  
+2. Assure‑toi que le linter et la build passent (`npm test` si défini).
+
+---
+
+> ⭐️ Si ce projet t’a aidé, n’oublie pas de laisser une _star_ !
+

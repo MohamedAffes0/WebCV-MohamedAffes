@@ -2,11 +2,13 @@
 
 > **CV en ligne** réalisé avec **[Astro](https://astro.build/)**, prêt pour un déploiement statique rapide (Netlify, Vercel, GitHub Pages, etc.).
 
-![Image mode clair](preview-light.png)
-*Image pour le mode clair*
-
-![Image mode sombre](preview-dark.png)
-*Image pour le mode sombre*
+# Screenshot
+<p align="center">
+    <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://github.com/MohamedAffes0/WebCV-MohamedAffes/blob/Mohamed/screenshot/preview-dark.png">
+            <source media="(prefers-color-scheme: light)" srcset="https://github.com/MohamedAffes0/WebCV-MohamedAffes/blob/Mohamed/screenshot/preview-light.png">
+    </picture>
+</p>
 
 ---
 
